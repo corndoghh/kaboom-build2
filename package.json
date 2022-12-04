@@ -1,0 +1,18 @@
+{
+  "name": "kaboom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd src/scripts/ && esbuild game.js --bundle > build.js && cd .. && cd .. && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.15.17",
+    "express": "^4.18.2",
+    "kaboom": "^2000.2.10"
+  }
+}
