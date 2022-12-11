@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd src/scripts/ && esbuild game.js --bundle > build.js && cd .. && cd .. && node app.js",
+    "start": "cd src/scripts/game/ && esbuild game.js --bundle --format=esm > build.js && cd .. && cd .. && cd .. && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
