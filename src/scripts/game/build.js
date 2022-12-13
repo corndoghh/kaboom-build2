@@ -2730,12 +2730,9 @@ var levelManager = class {
     if (this.movementLoop != null) {
       this.movementLoop();
     }
-    const isMoveKey = (char) => {
-      return char == "a" || char == " " || char == "d";
-    };
-    const getDir = (code) => {
-      return { x: code == "a" ? -1 : code == "d" ? 1 : 0, y: code == " " ? -1 : 0 };
-    };
+    this.player.sprite.onDoubleJump(() => {
+      console.log("die in a hole");
+    });
     onKeyDown("d", () => {
       this.player.sprite.moveBy(vec2(1, 0).scale(this.speed));
     });
@@ -2743,9 +2740,7 @@ var levelManager = class {
       this.player.sprite.moveBy(vec2(-1, 0).scale(this.speed));
     });
     onKeyDown("space", () => {
-      if (this.player.sprite.isGrounded()) {
-        this.player.sprite.jump();
-      }
+      this.player.sprite.doubleJump();
     });
   }
 };
@@ -2777,7 +2772,9 @@ var Player = class {
 };
 
 // game.js
-ao();
+ao({
+  background: [0, 0, 0]
+});
 console.log(levels[0].length);
 await loadAssets();
 var player = new Player("player");

@@ -4,7 +4,9 @@ import { levelManager } from "./levelManager";
 import { loadAssets } from "./loadAssets";
 import { Player } from "./player";
 
-kaboom()
+kaboom({
+    background: [0,0,0]
+})
 
 console.log(levels[0].length)
 

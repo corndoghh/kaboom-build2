@@ -4,7 +4,8 @@ export class Player {
             sprite(image),
             pos(0,0),
             area(),
-            body()
+            body(),
+
         ])
         this.isGrounded = false
     }
